@@ -1,4 +1,4 @@
-# content
+# config
 
 ## 描述
 
@@ -11,6 +11,7 @@
 -|-|-
 github|使用hosts解决文内github无法下载问题|i-cueve/Bash
 vimrc|vim配置文件|i-curve/Bash
+tmux|tmux配置|i-curve/Bash
 
 ## 用法
 
@@ -19,7 +20,7 @@ vimrc|vim配置文件|i-curve/Bash
 ## 克隆
 
 ```git
-git clone https://github.com/i-curve/content.git
+git clone https://github.com/i-curve/config.git
 ```
 
 ## 贡献
