@@ -65,7 +65,7 @@ Plug 'plasticboy/vim-markdown'
 "GOLAND-> faith-go
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 "PYTHON-> python-mode
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 "C++-> cland_complete
 Plug 'xavierd/clang_complete'
 call plug#end()
