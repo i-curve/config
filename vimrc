@@ -19,9 +19,9 @@ set autoindent
 let mapleader=","
 inoremap <leader>w <Esc>:w<cr>
 noremap <leader>w :w<cr>
-inoremap jj <Esc>
-vnoremap jj <Esc>
-inoremap kk <Esc>:w<cr>a
+inoremap kk <Esc>
+vnoremap kk <Esc>
+inoremap jj <Esc>:w<cr>a
 
 "这是安装插件 vim-plug
 "This is the plug: vim-plug
