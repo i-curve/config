@@ -1,7 +1,7 @@
 "这是注释
 
 "设置行号
-"set number
+set number
 set termencoding=utf-8
 
 "set hlsearch
@@ -45,6 +45,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-commentary'
 Plug 'lfv89/vim-interestingwords'
 Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate'
 
 Plug 'majutsushi/tagbar'
 "Plug 'kannokanno/previm'
