@@ -2,6 +2,8 @@
 "********************Basic setting*******************
 "Set the Row Number
 set number
+syntax on
+colorscheme desert
 set termencoding=utf-8
 
 "set hlsearch
@@ -23,7 +25,6 @@ noremap <leader>w :w<cr>
 inoremap kk <Esc>
 vnoremap kk <Esc>
 "inoremap jj <Esc>:w<cr>a
-"vnoremap jj <Esc>
 "jump cursor
 "inoremap <C-CR> <Esc>
 "inoremap <C-S-CR> <Esc>O
@@ -55,6 +56,10 @@ Plug 'majutsushi/tagbar'
 "Plug 'kannokanno/previm'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+"******************Git******************************
+Plug 'tpope/vim-fugitive'
+Plug 'junejune/gv.vim'
+Plug 'airblade/vim-gitgutter'
 "******************Write code************************
 ""Formar-> neoformat
 "Plug 'sbdchd/neoformat'
@@ -89,6 +94,7 @@ set backspace=start,eol
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
 
+set updatetime=100
 
 " markdowm
 let g:vim_markdown_fenced_languages = ['csharp=cs','c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini','py=py']
@@ -115,7 +121,7 @@ nnoremap <leader>t :TagbarToggle<CR>
 "             \ 'no_append': 1,
 "             \ }
 " let g:neoformat_enabled_python = ['autopep8']
-"Pythin->  python-mode
+"Python->  python-mode
 let g:pymode_python = 'python3'
 let g:pymode_trim_whitespaces = 1
 let g:pymode_rope = 1
