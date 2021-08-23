@@ -58,7 +58,7 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 "******************Git******************************
 Plug 'tpope/vim-fugitive'
-Plug 'junejune/gv.vim'
+Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 "******************Write code************************
 ""Formar-> neoformat
