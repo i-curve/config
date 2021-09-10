@@ -3,6 +3,7 @@ set -g mouse on
 set -g base-index 1
 set -g pane-base-index 1
 
+set-option -g default-shell "/bin/bash"
 set -g default-terminal "tmux-256color"
 setw -g monitor-activity on
 
