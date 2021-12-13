@@ -17,6 +17,8 @@ bind-key h select-pane -L # left
  
 bind-key l select-pane -R # right
 
+bind -n C-k clear-history
+
 bind '"' split-window -c "#{pane_current_path}"
 bind % split-window -h -c "#{pane_current_path}"
 bind 'c' new-window -c "#{pane_current_path}"
