@@ -90,8 +90,9 @@ call plug#end()
 nmap ss <Plug>(easymotion-s2)
 nnoremap <leader>g :NERDTreeToggle<cr>
 nnoremap <leader>v :NERDTreeFind<cr>
+nnoremap <leader>f :NERDTreeCWD<cr>
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$', '__pycache__', '\.ropeproject']
+let NERDTreeIgnore=['\.git$', '__pycache__', '\.ropeproject', '\.swp$']
 
 "delimitMate
 set backspace=start,eol
