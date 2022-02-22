@@ -9,6 +9,7 @@ set termencoding=utf-8
 
 set hlsearch
 set incsearch
+set ignorecase
 
 set smartindent
 set ts=4
