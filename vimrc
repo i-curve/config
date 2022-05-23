@@ -38,27 +38,24 @@ inoremap jj <Esc>:w<cr>a
 "********************The basic pulgin****************
 call plug#begin('~/.vim/plugged')
 "*****************Basic****************************
-Plug 'mhinz/vim-startify'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
-Plug 'Yggdroot/indentLine'
-"Plug 'w0ng/vim-hybrid'
+Plug 'mhinz/vim-startify'           " vim 开屏工具
+Plug 'vim-airline/vim-airline'      " vim 底部状态栏
+Plug 'vim-airline/vim-airline-themes'   " vim 底部工具栏
+Plug 'altercation/vim-colors-solarized' " vim 配色主题
+Plug 'Yggdroot/indentLine'          " 代码缩进线
+"Plug 'w0ng/vim-hybrid'             " vim 配色主题
 "Plug 'suxpert/vimcaps'
 "****************Highing **********************************
-Plug 'easymotion/vim-easymotion'
-
-Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
-
-Plug 'tpope/vim-commentary'
-Plug 'lfv89/vim-interestingwords'
-Plug 'tpope/vim-surround'
-Plug 'Raimondi/delimitMate'
-
-Plug 'majutsushi/tagbar'
-"Plug 'kannokanno/previm'
-Plug 'godlygeek/tabular'
+Plug 'easymotion/vim-easymotion'    " ss 快速文件定位
+Plug 'scrooloose/nerdtree'          " 文件目录
+Plug 'kien/ctrlp.vim'               " ctrl+p 搜索文件
+Plug 'tpope/vim-commentary'         " gc文件注释
+Plug 'lfv89/vim-interestingwords'   " ,+k 关键字高亮
+Plug 'tpope/vim-surround'           " 对称字符添加 
+Plug 'Raimondi/delimitMate'         " 标点符号配对
+Plug 'majutsushi/tagbar'            " 函数和类目录
+"Plug 'kannokanno/previm'           " 文件预览, 类似markdown
+Plug 'godlygeek/tabular'            " tab 对齐
 Plug 'plasticboy/vim-markdown'
 "******************Git******************************
 Plug 'tpope/vim-fugitive'
@@ -66,27 +63,19 @@ Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 "******************Write code************************
 ""Formar-> neoformat
-Plug 'sbdchd/neoformat'
+Plug 'sbdchd/neoformat'             " 格式化程序
 " asynctask
-Plug 'skywind3000/asynctasks.vim'
-Plug 'skywind3000/asyncrun.vim'
-"auto complete the code
-" if has('nvim')
-"   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" else
-"   Plug 'Shougo/deoplete.nvim'
-"   Plug 'roxma/nvim-yarp'
-"   Plug 'roxma/vim-hug-neovim-rpc'
-" endif
-"
+Plug 'skywind3000/asynctasks.vim'   " 自动运行c++
+Plug 'skywind3000/asyncrun.vim'     " 自动运行程序
 "GOLAND-> faith-go
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " go 语言组件
 "PYTHON-> python-mode
-Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
-Plug 'yyzybb/cppenv'
+Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }    " pythoon 组件
+Plug 'yyzybb/cppenv'            " c++组件
 "C++-> cland_complete
-Plug 'xavierd/clang_complete'
-Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch': 'release'} " 通用代码补全
+Plug 'xavierd/clang_complete'   " c++自动补全
+Plug 'Valloric/YouCompleteMe'   " 自动补全
 call plug#end()
 
 " asynctask
@@ -101,17 +90,18 @@ noremap <silent><f7> :AsyncTask project-build<cr>
 
 nmap ss <Plug>(easymotion-s2)
 nnoremap <leader>b :IndentLinesToggle<cr>
+" nerdtree
 nnoremap <leader>g :NERDTreeToggle<cr>
-
 nnoremap <leader>v :NERDTreeFind<cr>
 nnoremap <leader>f :NERDTreeCWD<cr>
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$', '__pycache__', '\.ropeproject', '\.swp$']
+let NERDTreeIgnore=['\.git$', '__pycache__', '\.ropeproject', '\.swp$', '.vscode']
 
 "delimitMate
 set backspace=start,eol
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
+nnoremap <leader>j :DelimitMateSwitch<cr>
 
 set updatetime=100
 
@@ -122,8 +112,6 @@ let g:vim_markdown_folding_disabled = 1
 set conceallevel=2
 let g:vim_markdown_auto_extension_ext = 'MD'
 
-"deoplete.nvim
-" let g:deoplete#enable_at_startup = 1
 " set completeopt-=preview
 "
 " ctrlp
@@ -158,6 +146,8 @@ augroup END
 "             \ }
 let g:neoformat_enabled_python = ['autopep8']
 let g:shfmt_opt="-ci"
+" go
+nnoremap <F3> :GoRun<cr>
 "Python->  python-mode
 let g:pymode_python = 'python3'
 let g:pymode_trim_whitespaces = 1
@@ -174,8 +164,7 @@ let g:pymode_lint_checkers = ['pylint', 'pyflakes']
 let g:pymode_lint_ignore = ['C','W0107']
 let g:pymode_options_max_line_length=120
 let g:pymode_run = 1
-let g:pymode_run_bind = '<leader>r'
-"
+let g:pymode_run_bind = '<F4>'
 "C++->clang-complete
 let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
 set backspace=2
