@@ -140,3 +140,9 @@ Language: Proto
 BasedOnStyle: LLVM
 AlignAfterOpenBracket: Align
 ColumnLimit: 0
+
+---
+Language: JavaScript
+BasedOnStyle: LLVM
+AlignAfterOpenBracket: Align
+ColumnLimit: 0

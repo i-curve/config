@@ -21,6 +21,7 @@ set expandtab
 set autoindent
 autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
 autocmd Filetype html setlocal ts=2 sw=2 expandtab
+autocmd Filetype js setlocal ts=2 sw=2 expandtab
 
 
 "Set the Map
@@ -30,9 +31,6 @@ noremap <leader>w :w<cr>
 inoremap kk <Esc>
 vnoremap kk <Esc>
 inoremap jj <Esc>:w<cr>a
-"jump cursor
-"inoremap <C-CR> <Esc>
-"inoremap <C-S-CR> <Esc>O
 
 "This is the plug: vim-plug
 "********************The basic pulgin****************
@@ -51,7 +49,7 @@ Plug 'scrooloose/nerdtree'          " 文件目录
 Plug 'kien/ctrlp.vim'               " ctrl+p 搜索文件
 Plug 'tpope/vim-commentary'         " gc文件注释
 Plug 'lfv89/vim-interestingwords'   " ,+k 关键字高亮
-Plug 'tpope/vim-surround'           " 对称字符添加 
+Plug 'tpope/vim-surround'           " 对称字符添加
 Plug 'Raimondi/delimitMate'         " 标点符号配对
 Plug 'majutsushi/tagbar'            " 函数和类目录
 "Plug 'kannokanno/previm'           " 文件预览, 类似markdown
@@ -87,15 +85,15 @@ noremap <silent><f6> :AsyncTask project-run<cr>
 noremap <silent><f7> :AsyncTask project-build<cr>
 
 "Set the Map in Plug
-
 nmap ss <Plug>(easymotion-s2)
 nnoremap <leader>b :IndentLinesToggle<cr>
+
 " nerdtree
 nnoremap <leader>g :NERDTreeToggle<cr>
 nnoremap <leader>v :NERDTreeFind<cr>
 nnoremap <leader>f :NERDTreeCWD<cr>
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['\.git$', '__pycache__', '\.ropeproject', '\.swp$', '.vscode']
+let NERDTreeIgnore=['node_modules','\.git$', '__pycache__', '\.ropeproject', '\.swp$', '.vscode']
 
 "delimitMate
 set backspace=start,eol
@@ -118,10 +116,10 @@ let g:vim_markdown_auto_extension_ext = 'MD'
 let g:ctrlp_working_path_mode = 'cra'
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+            \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+            \ 'file': '\v\.(exe|so|dll)$',
+            \ 'link': 'some_bad_symbolic_links',
+            \ }
 " interesting
 let g:interestingWordsRandomiseColors = 1
 let g:interestingWordsTermColors = ['154', '121', '211', '137', '214', '222']
@@ -131,20 +129,27 @@ let g:interestingWordsGUIColors = ['#8CCBEA', '#A4E57E', '#FFDB72', '#FF7272', '
 nnoremap <leader>t :TagbarToggle<CR>
 "*******************************Write code**************************
 "format->Neoformat
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
 augroup fmt
     autocmd!
     autocmd BufWritePre * undojoin | Neoformat
 augroup END
-" let g:neoformat_python_autopep8 = {
-"             \ 'exe': 'autopep8',
-"             \ 'args': ['-s 4', '-E'],
-"             \ 'replace': 1,
-"             \ 'stdin': 1, 
-"             \ 'env': ["DEBUG=1"],
-"             \ 'valid_exit_codes': [0, 23],
-"             \ 'no_append': 1,
-"             \ }
+let g:neoformat_python_autopep8 = {
+            \ 'exe': 'autopep8',
+            \ 'args': ['-s 4', '-E'],
+            \ 'replace': 1,
+            \ 'stdin': 1,
+            \ 'env': ["DEBUG=1"],
+            \ 'valid_exit_codes': [0, 23],
+            \ 'no_append': 1,
+            \ }
 let g:neoformat_enabled_python = ['autopep8']
+let g:neoformat_enabled_javascript = ['prettier','prettierd']
 let g:shfmt_opt="-ci"
 " go
 nnoremap <F3> :GoRun<cr>
@@ -156,7 +161,7 @@ let g:pymode_rope_goto_definition_bind = "<C-]>"
 let g:pymode_rope_organize_imports_bind = '<C-c>ro'
 let g:pymode_doc=1
 let g:pymode_doc_bind='K'
-let g:pymode_lint = 1 
+let g:pymode_lint = 1
 let g:pymode_lint_on_write = 1
 let g:pymode_lint_on_unmodified=0
 let g:pymode_lint_on_fly=0
@@ -167,6 +172,10 @@ let g:pymode_run = 1
 let g:pymode_run_bind = '<F4>'
 "C++->clang-complete
 let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
+let g:clang_complete_auto=0
+let g:clang_user_options='-std=c++20'
+" let g:clang_compilation_database='build'
+" let g:clang_auto_user_options="compile_commands.json, build"
 set backspace=2
 "C++->YouCompleteMe
 "默认配置文件路径"
