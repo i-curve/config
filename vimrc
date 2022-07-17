@@ -134,7 +134,8 @@ let g:neoformat_basic_format_align = 1
 " Enable tab to spaces conversion
 let g:neoformat_basic_format_retab = 1
 " Enable trimmming of trailing whitespace
-let g:neoformat_basic_format_trim = 1
+let g:neoformat_only_msg_on_error = 1
+let b:neoformat_run_all_formatters = 0
 augroup fmt
     autocmd!
     autocmd BufWritePre * undojoin | Neoformat
@@ -150,6 +151,7 @@ let g:neoformat_python_autopep8 = {
             \ }
 let g:neoformat_enabled_python = ['autopep8']
 let g:neoformat_enabled_javascript = ['prettier','prettierd']
+let g:neoformat_enable_ini = [] 
 let g:shfmt_opt="-ci"
 " go
 nnoremap <F3> :GoRun<cr>
@@ -171,7 +173,7 @@ let g:pymode_options_max_line_length=120
 let g:pymode_run = 1
 let g:pymode_run_bind = '<F4>'
 "C++->clang-complete
-let g:clang_library_path='/usr/lib/llvm-10/lib/libclang-10.so.1'
+let g:clang_library_path='/usr/lib/llvm-12/lib/libclang-12.so.1'
 let g:clang_complete_auto=0
 let g:clang_user_options='-std=c++20'
 " let g:clang_compilation_database='build'
