@@ -32,6 +32,7 @@ inoremap kk <Esc>
 vnoremap kk <Esc>
 inoremap jj <Esc>:w<cr>a
 
+au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 "This is the plug: vim-plug
 "********************The basic pulgin****************
 call plug#begin('~/.vim/plugged')
@@ -151,7 +152,6 @@ let g:neoformat_python_autopep8 = {
             \ }
 let g:neoformat_enabled_python = ['autopep8']
 let g:neoformat_enabled_javascript = ['prettier','prettierd']
-let g:neoformat_enable_ini = [] 
 let g:shfmt_opt="-ci"
 " go
 nnoremap <F3> :GoRun<cr>
