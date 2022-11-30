@@ -3,7 +3,7 @@ Language: Cpp
 # BasedOnStyle: LLVM
 AccessModifierOffset: -4
 AlignAfterOpenBracket: Align
-AlignConsecutiveMacros: false
+AlignConsecutiveMacros: Consecutive
 AlignConsecutiveAssignments: false
 AlignConsecutiveDeclarations: false
 AlignEscapedNewlines: Right
@@ -50,7 +50,7 @@ BreakConstructorInitializersBeforeComma: false
 BreakConstructorInitializers: BeforeColon
 BreakAfterJavaFieldAnnotations: false
 BreakStringLiterals: true
-ColumnLimit: 0
+ColumnLimit: 300
 CommentPragmas: "^ IWYU pragma:"
 CompactNamespaces: false
 ConstructorInitializerAllOnOneLineOrOnePerLine: false
@@ -147,6 +147,12 @@ ColumnLimit: 0
 
 ---
 Language: CSharp
+BasedOnStyle: LLVM
+AlignAfterOpenBracket: Align
+ColumnLimit: 0
+
+---
+Language: Java
 BasedOnStyle: LLVM
 AlignAfterOpenBracket: Align
 ColumnLimit: 0

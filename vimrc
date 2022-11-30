@@ -19,9 +19,7 @@ set shiftwidth=4
 set expandtab
 
 set autoindent
-autocmd Filetype yaml setlocal ts=2 sw=2 expandtab
-autocmd Filetype html setlocal ts=2 sw=2 expandtab
-autocmd Filetype js setlocal ts=2 sw=2 expandtab
+autocmd Filetype html,js,css,yaml setlocal ts=2 sw=2 expandtab
 
 "Set the Map
 let mapleader=","
@@ -131,7 +129,9 @@ nnoremap <leader>t :TagbarToggle<CR>
 "format->autoformat
 noremap <leader>s :Autoformat<CR>
 "au BufWrite * :Autoformat
-autocmd FileType python,sh,c,cpp,java au BufWrite * :Autoformat
+" let g:formatdef_clang = "clang-format"
+let g:formatters_java=['clangformat']
+autocmd FileType python,sh,c,cpp,java,html,xml,javascript,css au BufWrite * :Autoformat
 let g:autoformat_verbosemode=1
 "autocmd FileType vim,tex let b:autoformat_autoindent=0
 " go
@@ -154,7 +154,7 @@ let g:pymode_options_max_line_length=120
 let g:pymode_run = 1
 let g:pymode_run_bind = '<F4>'
 "C++->clang-complete
-let g:clang_library_path='/usr/lib/llvm-12/lib/libclang-12.so.1'
+let g:clang_library_path='/usr/lib/llvm-14/lib/libclang-14.so.1'
 let g:clang_complete_auto=0
 let g:clang_user_options='-std=c++20'
 " let g:clang_compilation_database='build'
