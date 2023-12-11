@@ -17,6 +17,7 @@
 | tmux              | tmux 配置                  | 配置 .tmux.conf 文件                                 |
 | vimrc             | vim 配置文件               | 最全 .vimrc 配置,需要安装大量组件,适用于个人 pc 开发 |
 | vimrc-comment     | 通用 vimrc 配置            | 对比 .vimrc,去掉部分组件,易安装,适用于服务器         |
+| webpack           | webpack 配置               | 配置 webpack 项目                                    |
 
 ## 用法
 

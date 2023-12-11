@@ -102,7 +102,7 @@ nnoremap <leader>j :DelimitMateSwitch<cr>
 set updatetime=100
 
 " markdowm
-let g:vim_markdown_fenced_languages = ['csharp=cs','c++=cpp', 'viml=vim', 'bash=sh', 'ini=dosini','py=py']
+let g:vim_markdown_fenced_languages = ['csharp=cs','c++=cpp','h=cpp','hh=cpp', 'viml=vim', 'bash=sh', 'ini=dosini','py=py']
 let g:vim_markdown_folding_disabled = 1
 "set nofoldenable
 set conceallevel=2
@@ -154,7 +154,7 @@ let g:pymode_options_max_line_length=120
 let g:pymode_run = 1
 let g:pymode_run_bind = '<F4>'
 "C++->clang-complete
-let g:clang_library_path='/usr/lib/llvm-14/lib/libclang-14.so.1'
+let g:clang_library_path='/usr/lib/llvm-15/lib/libclang-15.so.1'
 let g:clang_complete_auto=0
 let g:clang_user_options='-std=c++20'
 " let g:clang_compilation_database='build'
