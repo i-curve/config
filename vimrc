@@ -167,7 +167,7 @@ let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 let g:ycm_confirm_extra_conf=0
 set completeopt=longest,menu
 "python解释器路径"
-let g:ycm_path_to_python_interpreter='/opt/anaconda3/bin/python'
+let g:ycm_path_to_python_interpreter='/opt/miniconda/bin/python'
 "是否开启语义补全"
 let g:ycm_seed_identifiers_with_syntax=1
 "是否在注释中也开启补全"
